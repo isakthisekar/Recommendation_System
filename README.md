@@ -109,45 +109,66 @@ Widely adopted across industries, recommender systems power platforms such as Ne
 ### •	Analysis of Movies Vs TV Shows
 <img width="1054" height="445" alt="image" src="https://github.com/user-attachments/assets/04880fad-e8fb-49c4-a75b-6b7576ee7a55" />
 It is evident that there are more Movies on Netflix than TV shows.
+
 ### •	Month when least amount of content is added
 
 <img width="1054" height="693" alt="image" src="https://github.com/user-attachments/assets/1f1ae3e4-2b92-4e57-8e8d-752a41741da4" />
 If the year 2020 is considered, February and June were the months when comparatively less content was released. Therefore, these months may be a good choice for the success of a new release!
+
 ### •	Movie Ratings Analysis
 
 <img width="1054" height="689" alt="image" src="https://github.com/user-attachments/assets/b8daf6a5-9270-48d6-8497-f421f4fed937" />
 The largest count of movies are made with the 'TV-MA' rating. "TV-MA" is a rating assigned by the TV Parental Guidelines to a television program that was designed for mature audiences only.
 Second largest is the 'TV-14' stands for content that may be inappropriate for children younger than 14 years of age.
 Third largest is the 'TV-PG' rating. Programs rated TV-PG may contain some material that parents or guardians may find inappropriate for younger children. Programs assigned a TV-PG rating may include infrequent coarse language, some sexual content, some suggestive dialogue, or moderate violence.
+
 ### •	Year wise analysis
 
 <img width="1042" height="667" alt="image" src="https://github.com/user-attachments/assets/31bd6a60-bc03-42d5-818c-1a8b83f040a1" />
 Thus, 2018 was the year when most of the content were released.
+
 ### •	Analysis of TV Shows in Netflix
 
 <img width="1046" height="580" alt="image" src="https://github.com/user-attachments/assets/8c279f73-f829-4e5c-b2d2-d32d34652f25" />
 United States has the most TV Shows contents that were created in Netflix.	
+
 ### •	Analysis of duration of movies
 
 <img width="694" height="442" alt="image" src="https://github.com/user-attachments/assets/e71b664d-e05c-4c70-82ad-2ff3616adf67" />
 So, a good amount of movies on Netflix are among the duration of 75-120 mins. It is acceptable considering the fact that a fair amount of the audience cannot watch a 3 hour movie in one sitting.
+
 ### •	Analysis of duration of TV shows
 
 <img width="726" height="576" alt="image" src="https://github.com/user-attachments/assets/427a2324-8af4-4526-81fd-0e48fac25bce" />
+
 Thus, Grey's Anatomy, NCIS and Supernatural are amongst the tv series that have highest number of seasons.
+
+
 ## Content-Based Recommendation System
+
 The TF-IDF(Term Frequency-Inverse Document Frequency (TF-IDF) ) score is the frequency of a word occurring in a document, down-weighted by the number of documents in which it occurs. This is done to reduce the importance of words that occur frequently in plot overviews and therefore, their significance in computing the final similarity score.
+
 Term Frequency (TF), it is the relative frequency of a word in a document and is given as (term instances / total instances). Inverse Document Frequency (IDF) is the relative count of documents containing the term is given as log (number of documents/documents with term) The overall importance of each word to the documents in which they appear is equal to TF * IDF.
+
 This will give you a matrix where each column represents a word in the description vocabulary (all the words that appear in at least one document) and each row represents a movie, as before. This is done to reduce the importance of words that occur frequently in plot descriptions and therefore, their significance in computing the final similarity score.
+
 Fortunately, scikit-learn gives a built-in TF-IDF Vectorizer class that produces the TF-IDF matrix in a couple of lines.
+
 With this TF-IDF matrix similarity score is computed. There are several candidates for this; such as the euclidean, the Pearson and the cosine similarity scores. There is no right answer to which score is the best. Different scores work well in different scenarios and it is often a good idea to experiment with different metrics.
+
 We will be using the cosine similarity to calculate a numeric quantity that denotes the similarity between two movies. We use the cosine similarity score since it is independent of magnitude and is relatively easy and fast to calculate. Mathematically, it is defined as follows:
 
 Similarity = cos(x, y) = x . y / ||x|| * ||y||
+
 Since TF-IDF vectorizer is used, calculating the dot product will directly give the cosine similarity score.
+
 Therefore, we will use sklearn's linear_kernel() instead of cosine_similarities() since it is faster.
+
 Content based filtering is done on multiple factors like time, cast, director, listed in, plot, etc. the keywords are converted into lowercase and strip all the spaces between them. This is done so that our vectorizer doesn't count the Johnny of "Johnny Depp" and "Johnny Galecki" as the same. 
+
 Soup or Bag Of Words are created for all the rows, which is strin that contains metadata that is to be fed to the vectorizer.
+
 The  CountVectorizer() is used instead of TF-IDF because we do not want to down-weight the presence of an actor/director if he or she has acted or directed in relatively more movies. It doesn't make much intuitive sense.
+
 Finally the recommender has been built and been capturing more information due to more metadata and has given better recommendations.
 
