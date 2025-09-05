@@ -6,6 +6,7 @@ The rapid expansion of data collection has ushered in a new era of information-d
 Widely adopted across industries, recommender systems power platforms such as Netflix, YouTube, Tinder, and Amazon. They analyze user preferences to present tailored content—whether it's product recommendations on Amazon, autoplay video selections on YouTube, or suggested profiles on Tinder. Social media platforms like Facebook also leverage these systems to suggest friends and pages. The effectiveness of these engines is crucial to the success of companies like Netflix and Spotify, where user engagement and satisfaction depend heavily on personalized content delivery.
 ### Working mechanism of recommendation system
 <img width="1015" height="506" alt="image" src="https://github.com/user-attachments/assets/208bae90-2b6e-47de-80d8-ab7bbf55841c" />
+
 ### A) Understanding Relationships:
 
 •	Relationships provide recommender systems with tremendous insight, as well as an understanding of customers. There are three main types that occur:
@@ -53,6 +54,7 @@ Widely adopted across industries, recommender systems power platforms such as Ne
 •	Recommendation engines analyze data by filtering it to extract relevant insights to make the final recommendations.
 ### Types of Recommendation Systems
 <img width="1046" height="501" alt="image" src="https://github.com/user-attachments/assets/1a21bfc9-7a97-4a10-8153-8346ac79c327" />
+
 ### 1. Content-based Filtering
 
 •	Content-based filtering methods are mainly based on the description of an item and a profile of the user’s preferred choices.
